@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Supriya V | Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #141e30, #243b55);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* Split Layout */
+    .split {
+      display: flex;
+      height: 100vh;
+    }
+
+    .left, .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .left {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(10px);
+      text-align: center;
+    }
+
+    .left img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 4px solid #66fcf1;
+      margin-bottom: 20px;
+    }
+
+    .left h1 {
+      font-size: 2.5rem;
+      color: #66fcf1;
+    }
+
+    .typewriter {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      border-right: 3px solid #66fcf1;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(30) forwards, blink 0.7s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    .right .card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(12px);
+      border-radius: 15px;
+      padding: 25px;
+      margin: 20px;
+      width: 80%;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transform: translateY(50px);
+      opacity: 0;
+      transition: all 1s ease;
+    }
+
+    .right .card.show {
+      transform: translateY(0);
+      opacity: 1;
+    }
+
+    .skills span {
+      display: inline-block;
+      background: #66fcf1;
+      color: #000;
+      padding: 8px 15px;
+      border-radius: 20px;
+      margin: 5px;
+      font-size: 0.9rem;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: rgba(0,0,0,0.5);
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="split">
+    <!-- Left Profile Section -->
+    <div class="left">
+      <img src="sup.jpg" alt="Profile Photo">
+      <h1>Supriya V</h1>
+  
+      <p class="typewriter"> Aspiring Front-End Developer | Designer | Learner</p>
+    </div>
+
+    <!-- Right Content Section -->
+    <div class="right">
+      <div class="card">
+        <h2>About Me</h2>
+        <p> I'm a Bachelor of Computer Application with passion for creative web developer who loves crafting modern & stylish websites </p>
+      </div>
+
+      <div class="card">
+        <h2>Skills</h2>
+        <div class="skills">
+          <span>HTML</span>
+          <span>CSS</span>
+          <span>JavaScript</span>
+          <span>Python</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>Projects</h2>
+        <ul>
+          <li> Portfolio Website</li>
+          <li> Creative Landing Page</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:su.priya7094@gmail.com" style="color:#66fcf1;">su.priya7094@gmail.com</a></p>
+        
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>THANKS TO ALL</p>
+  </footer>
+
+  <script>
+    // Scroll Animation
+    const cards = document.querySelectorAll('.card');
+    window.addEventListener('scroll', () => {
+      cards.forEach(card => {
+        const rect = card.getBoundingClientRect().top;
+        if(rect < window.innerHeight - 100){
+          card.classList.add('show');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
